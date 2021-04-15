@@ -21,8 +21,11 @@ plot.rn.func <- function(flux.iri.df,date.since = as.Date('2021-3-5')){
 
 # 
 
+pdf('rnet.pdf',width = 8,height = 8*.618)
+
 plot.rn.func(flux.con.df,date.since = as.Date('2020-11-24'))
 title('Con-No Fh after 2020-12-2')
 
 plot.rn.func(flux.iri.df)
 title('Iri')
+dev.off()
