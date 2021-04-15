@@ -57,7 +57,7 @@ saveRDS(flux.con.df,'cache/flux_con.rds')
 
 # ############
 iri.fn.vec <- list.files('data/Paddock_Irr_slow/',full.names = T,pattern = 'FluxIrr_slow_flux')
-flux.iri.df <- read.flux.slow.func(con.fn.vec,nskip = 4)
+flux.iri.df <- read.flux.slow.func(iri.fn.vec,nskip = 4)
 flux.iri.df$TIMESTAMP_TS <- strptime(flux.iri.df$TIMESTAMP_TS,'%Y-%m-%d %H:%M:%S')
 
 flux.iri.df$TIMESTAMP_TS <- as.POSIXct(flux.iri.df$TIMESTAMP_TS)
@@ -75,6 +75,7 @@ saveRDS(flux.iri.df,'cache/flux_iri.rds')
 
 
 # 
+
 # 
 
 palette(c('red','black'))
